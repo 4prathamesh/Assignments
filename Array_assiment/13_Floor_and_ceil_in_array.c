@@ -16,7 +16,7 @@ int main()
         if(no<=arr[i])
         {
             printf("ceiling is: %d\t",arr[i]);
-            printf("floor is : %d",arr[i-1]);\
+            printf("floor is : %d",arr[i-1]);
             break;
         }
         else
