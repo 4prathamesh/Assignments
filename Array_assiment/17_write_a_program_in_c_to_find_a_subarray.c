@@ -1,9 +1,9 @@
-//writ a program in c to find a subarray with given sum form th given array?
+//writ a program in c to find a subarray with given sum form th given array
 
 #include<stdio.h>
 int main()
 {
-    int i,s,sum,a[]={3,4,-7,1,3,3,1,-4};
+    int i,curSum,sum,a[]={3,4,-7,1,3,3,1,-4};
 
     printf("array is: \n");
     for(i=0;i<8;i++)
@@ -17,17 +17,19 @@ int main()
     printf("subarray:\n");
     for(i=0;i<7;i++)
     {
-        s=a[i]+a[i+1];   //7
-        for(j=i+1;j<8;j++)  //j=
+        curSum=0;
+        for(int  j=i;j<8;j++)  //j=
         {
-            if(s==sum)     //7==7
+            curSum=curSum+a[j];
+            if(sum==curSum)     //7==7
             {
-                s=s+a[j];   //7+4=11
+                printf("[%d----%d]",i,j);
+                for(int k=i;k<=j;k++)
+                {
+                    printf("%d\t",a[k]);
+                }
+                printf("\n");
             }
-            else{
-                s=s+a[j];
-            }
-
         }
     }
 
