@@ -3,38 +3,39 @@
 #include<stdio.h>
 int main()
 {
-    int i,curSum,sum,a[]={3,4,-7,1,3,3,1,-4};
+   int i,j,k,sum,userS,size;
+   printf("enter the size of array\n");
+   scanf("%d",&size);
+   int a[size];
 
-    printf("array is: \n");
-    for(i=0;i<8;i++)
-    {
-        printf("a[%d]----> %d \n",i,a[i]);
-    }
+   printf("enter the array element :\n");
+   for(i=0;i<size;i++)
+   {
+      scanf("%d",&a[i]);
+   }
 
-    printf("enter the element for check sum:\n");
-    scanf("%d",&sum);   //7
+   printf("enter the sum :\n");
+   scanf("%d",&userS);
 
-    printf("subarray:\n");
-    for(i=0;i<7;i++)
-    {
-        curSum=0;
-        for(int  j=i;j<8;j++)  //j=
-        {
-            curSum=curSum+a[j];
-            if(sum==curSum)     //7==7
+   // sub array 
+   for(i=0;i<size;i++)
+   {
+      sum=0;
+      for(j=i;j<size;j++)
+      {
+         sum=sum+a[j];
+         if(sum==userS)
+         {
+            printf("[%d..%d]--{",i,j);
+            for(k=i;k<=j;k++)
             {
-                printf("[%d----%d]",i,j);
-                for(int k=i;k<=j;k++)
-                {
-                    printf("%d\t",a[k]);
-                }
-                printf("\n");
+               printf(" %d ",a[k]);
             }
-        }
-    }
-
-    return 0;
-
+            printf("}\n");
+         }
+      }
+   }
+   return 0;
 }
 
 /*******************************OUT PUT***********************************************
@@ -48,8 +49,10 @@ a[4]----> 3
 a[5]----> 3
 a[6]----> 1
 a[7]----> -4
-enter the starting point and ending point
-3
+enter the sum :
 7
-[3...7]----{ 1  3  3  1  -4 }
+[0..1]--{ 3  4 }
+[0..5]--{ 3  4  -7  1  3  3 }
+[3..5]--{ 1  3  3 }
+[4..6]--{ 3  3  1 }
 */

@@ -1,4 +1,4 @@
-//find two element whose sum is closest to zero???????
+//find two element whose sum is closest to zero
 #include<stdio.h>
 #include<stdlib.h>
 int main()
@@ -24,6 +24,6 @@ int main()
 
         }
     }
-    printf("\n%d %d %d",max,a[m],a[n]);
+    printf("\nsum=%d num1=%d num2=%d",max,a[m],a[n]);
     return 0;
 }
